@@ -29,11 +29,11 @@ class Git
         curl_setopt($requestCurl, CURLOPT_RETURNTRANSFER, true);
         $code = curl_getinfo($requestCurl, CURLINFO_HTTP_CODE);
         $responseCurl = curl_exec($requestCurl);
-        
-        if($this->isHttpSuccess($code) == false)
-        {
-            throw new \Exception($responseCurl,$code);
-        }
+        // if($this->isHttpSuccess($code) == false)
+        // {
+        //     var_dump('code:',$code,curl_error($requestCurl));
+        //     throw new \Exception($responseCurl,$code);
+        // }
 
         if(curl_error($requestCurl)){
             var_dump('Error:');
